@@ -9,6 +9,7 @@ const ProductScreen = () => {
   const [product, setProduct] = useState({});
 
   const { id: productId } = useParams();
+
   useEffect(() => {
     const fetchProduct = async () => {
       const { data } = await axios.get(`/api/products/${productId}`);
