@@ -15,7 +15,7 @@ const cartSlice = createSlice({
     addToCart: (state, action) => {
       const item = action.payload;
 
-      const existItem = state.catItems.find((x) => x._id === item._id);
+      const existItem = state.cartItems.find((x) => x._id === item._id);
 
       if (existItem) {
         state.cartItems = state.cartItems.map((x) =>
@@ -34,7 +34,7 @@ const cartSlice = createSlice({
       state.shippingPrice = addDecimals(state.itemsPrice > 100 ? 0 : 10);
 
       // Calculate tax price ()
-      state.taxPrice = addDecimals(Number(0.15 * state.itemsPrice).toFixed(2));
+      state.taxPrice = addDecimals(Number(0.15 * state.itemPrice));
 
       // Calculate total price
       state.totalPrice = (
