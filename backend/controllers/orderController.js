@@ -6,7 +6,7 @@ import Order from "../models/orderModel.js";
 // @access  Private
 const addOrderItems = asyncHandler(async (req, res) => {
   const {
-    oderItems,
+    orderItems,
     shippingAddress,
     paymentMethod,
     itemsPrice,
@@ -15,12 +15,12 @@ const addOrderItems = asyncHandler(async (req, res) => {
     totalPrice,
   } = req.body;
 
-  if (oderItems && oderItems.length === 0) {
+  if (orderItems && orderItems.length === 0) {
     res.status(400);
     throw new Error("No order items");
   } else {
     const order = new Order({
-      oderItems: orderItems.map((x) => ({
+      orderItems: orderItems.map((x) => ({
         ...x,
         product: x._id,
         _id: undefined,
@@ -33,7 +33,6 @@ const addOrderItems = asyncHandler(async (req, res) => {
       shippingPrice,
       totalPrice,
     });
-
     const createOrder = await order.save();
 
     res.status(201).json(createOrder);
