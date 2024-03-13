@@ -133,7 +133,7 @@ const ProfileScreen = () => {
                     {order.isDelivered ? (
                       order.deliveredAt.substring(0, 10)
                     ) : (
-                      <FaTimes />
+                      <FaTimes style={{ color: "red" }} />
                     )}
                   </td>
                   <td>
