@@ -1,8 +1,12 @@
 # eMart eCommerce Platform
 
-![eMart Logo](placeholder_image_url_here)
+![eMart Preview](./frontend/public/images/OQ3A8G1.jpg)
 
 Welcome to eMart, your ultimate destination for all your online shopping needs. Built with the powerful MERN stack (MongoDB, Express, React, Node.js) along with Redux for state management, eMart offers a comprehensive set of features for both administrators and customers, ensuring a seamless and enjoyable shopping experience.
+
+## Introduction
+
+eMart is designed to provide users with a hassle-free and intuitive shopping experience. Whether you're a customer looking for your favorite products or an administrator managing your online store, eMart has you covered. With features like a full-featured shopping cart, product reviews, and an easy-to-use admin dashboard, eMart makes online shopping simple and enjoyable.
 
 ## Features
 
@@ -19,18 +23,6 @@ Welcome to eMart, your ultimate destination for all your online shopping needs. 
 - **Checkout process**: Smooth and secure checkout process with options for shipping and payment method selection.
 - **PayPal / credit card integration**: Offer multiple payment options for a convenient shopping experience.
 - **Database seeder**: Seed your database with sample users and products for testing and demonstration purposes.
-
-## Sample User Logins
-
-- **Admin**:
-  - Email: admin@email.com
-  - Password: 123456
-
-- **Customers**:
-  - Email: john@email.com
-  - Password: 123456
-  - Email: jane@email.com
-  - Password: 123456
 
 ## Getting Started
 
@@ -93,10 +85,6 @@ npm run data:import
 ```bash
 npm run data:destroy
 ```
-
-## Preview
-
-Include a preview section with images/screenshots showcasing the eMart platform in action.
 
 ## Support
 
