@@ -86,8 +86,11 @@ npm run data:import
 npm run data:destroy
 ```
 
-## Support
+## Contact
 
-For any inquiries or assistance, feel free to reach out to our support team at support@emart.com.
+For any inquiries or assistance, feel free to contact the developer:
+
+- **Developer**: Avishka Gihan
+- **Email**: avishkag18@gmail.com
 
 Start shopping with eMart today and experience the convenience of online shopping like never before!
