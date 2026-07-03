@@ -17,10 +17,35 @@ main {
 }
 
 .product-title {
-  height: 2.5em; /* Set a fixed height */
-  overflow: hidden; /* Hide overflow content */
-  text-overflow: ellipsis; /* Add ellipsis for long text */
-  white-space: nowrap; /* Prevent wrapping */
+  height: 2.5em;
+  /* Set a fixed height */
+  overflow: hidden;
+  /* Hide overflow content */
+  text-overflow: ellipsis;
+  /* Add ellipsis for long text */
+  white-space: nowrap;
+  /* Prevent wrapping */
+}
+
+/* Equal-height product cards */
+.card {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.card.my-3 img {
+  height: 200px;
+  object-fit: contain;
+  padding: 10px;
+  background: #f8f9fa;
+}
+
+.card-body {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 }
 
 table td,
@@ -43,6 +68,23 @@ table th {
   margin-top: 10px;
 }
 
+/* Fixed-height carousel */
+.carousel {
+  height: 400px;
+  overflow: hidden;
+  background: #f8f9fa;
+  border-radius: 8px;
+}
+
+.carousel-item {
+  height: 400px;
+}
+
+.carousel-item .d-flex {
+  height: 400px;
+  align-items: center;
+}
+
 .carousel-caption {
   position: absolute;
   width: 100%;
@@ -56,4 +98,7 @@ table th {
   display: block;
   margin-left: auto;
   margin-right: auto;
+  max-height: 350px;
+  width: auto;
+  object-fit: contain;
 }
