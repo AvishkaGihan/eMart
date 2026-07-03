@@ -1,6 +1,6 @@
 # eMart eCommerce Platform
 
-![eMart Preview](./frontend/public/images/OQ3A8G1.jpg)
+![eMart Preview](./screenshots/cover.png)
 
 Welcome to eMart, your ultimate destination for all your online shopping needs. Built with the powerful MERN stack (MongoDB, Express, React, Node.js) along with Redux for state management, eMart offers a comprehensive set of features for both administrators and customers, ensuring a seamless and enjoyable shopping experience.
 
@@ -23,6 +23,36 @@ eMart is designed to provide users with a hassle-free and intuitive shopping exp
 - **Checkout process**: Smooth and secure checkout process with options for shipping and payment method selection.
 - **PayPal / credit card integration**: Offer multiple payment options for a convenient shopping experience.
 - **Database seeder**: Seed your database with sample users and products for testing and demonstration purposes.
+
+## Screenshots
+
+### Customer Interface
+
+| Home Page | Product Details |
+| :---: | :---: |
+| ![Home](./screenshots/home.png) | ![Product Details](./screenshots/product-details.png) |
+
+| Login | Register |
+| :---: | :---: |
+| ![Login](./screenshots/login.png) | ![Register](./screenshots/register.png) |
+
+| User Profile | Order Details |
+| :---: | :---: |
+| ![Profile](./screenshots/profile.png) | ![Order Details](./screenshots/order-details.png) |
+
+### Admin Dashboard
+
+| Product List | User List |
+| :---: | :---: |
+| ![Admin Product List](./screenshots/admin-product-list.png) | ![Admin User List](./screenshots/admin-user-list.png) |
+
+| Edit Product | Edit User |
+| :---: | :---: |
+| ![Edit Product](./screenshots/edit-product.png) | ![Edit User](./screenshots/admin-user-edit.png) |
+
+| Order List |
+| :---: |
+| ![Admin Order List](./screenshots/admin-order-list.png) |
 
 ## Getting Started
 
