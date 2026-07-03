@@ -12,23 +12,19 @@ const ProductCarousel = () => {
   ) : error ? (
     <Message variant="danger">{error?.data?.message || error.error}</Message>
   ) : (
-    <Carousel variant="dark" pause="hover" className="mb-4">
+    <Carousel pause="hover" className="mb-4">
       {products.map((product) => (
         <Carousel.Item key={product._id}>
           <Link to={`/product/${product._id}`}>
-            <div className="d-flex justify-content-center">
-              <Image
-                src={product.image}
-                alt={product.name}
-                fluid
-                className="center-image"
-              />
+            <div className="editorial-slide">
+              <div className="editorial-content">
+                <h2>{product.name}</h2>
+                <p>${product.price}</p>
+              </div>
+              <div className="editorial-image-container">
+                <Image src={product.image} alt={product.name} fluid className="editorial-image" />
+              </div>
             </div>
-            <Carousel.Caption className="carousel-caption">
-              <h2 className="text-white text-right">
-                {product.name} (${product.price})
-              </h2>
-            </Carousel.Caption>
           </Link>
         </Carousel.Item>
       ))}

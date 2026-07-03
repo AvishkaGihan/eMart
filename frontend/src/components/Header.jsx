@@ -31,7 +31,7 @@ const Header = () => {
 
   return (
     <header>
-      <Navbar bg="light" variant="light" expand="md" collapseOnSelect>
+      <Navbar bg="white" variant="light" expand="md" collapseOnSelect className="border-bottom shadow-none" sticky="top">
         <Container>
           <LinkContainer to="/">
             <Navbar.Brand>
@@ -49,9 +49,10 @@ const Header = () => {
                   {cartItems.length > 0 && (
                     <Badge
                       pill
-                      bg="success"
                       style={{
                         marginLeft: "5px",
+                        backgroundColor: "var(--color-accent)",
+                        color: "#fff"
                       }}
                     >
                       {cartItems.reduce((a, c) => a + c.qty, 0)}
