@@ -584,7 +584,97 @@ a:hover {
   display: none !important;
 }
 
-/* Forms */
+/* Forms (Premium Dashboard style) */
+.premium-form-card {
+  background: transparent;
+  border: none;
+  box-shadow: none;
+  padding: 0;
+  margin: 2rem 0;
+}
+
+.premium-form-card .form-group,
+.premium-form-card form > div {
+  margin-bottom: 1.75rem !important;
+}
+
+.premium-form-card label {
+  font-size: 0.8rem;
+  font-weight: 750;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: var(--color-text-muted);
+  margin-bottom: 0.5rem;
+  display: block;
+}
+
+.premium-form-card .form-control,
+.premium-form-card .form-select {
+  background-color: #FAFAFA !important;
+  border: 1px solid var(--color-border) !important;
+  border-radius: var(--radius) !important;
+  padding: 0.8rem 1.25rem !important;
+  font-size: 1rem !important;
+  font-weight: 500 !important;
+  color: var(--color-text) !important;
+  transition: all 0.2s ease !important;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.01) !important;
+}
+
+.premium-form-card .form-control:focus,
+.premium-form-card .form-select:focus {
+  background-color: #ffffff !important;
+  border-color: #7B2CBF !important;
+  box-shadow: 0 0 0 3px rgba(123, 44, 191, 0.1) !important;
+}
+
+/* File Input Chooser Styling */
+.premium-form-card .form-control[type="file"] {
+  padding: 0.55rem 1rem !important;
+}
+
+.premium-form-card .form-control[type="file"]::file-selector-button {
+  background-color: #ffffff !important;
+  border: 1px solid var(--color-border) !important;
+  border-radius: 8px !important;
+  color: var(--color-text) !important;
+  padding: 0.3rem 0.8rem !important;
+  font-weight: 600 !important;
+  transition: all 0.2s ease !important;
+  margin-right: 1rem;
+  cursor: pointer;
+}
+
+.premium-form-card .form-control[type="file"]::file-selector-button:hover {
+  background-color: #F3F4F6 !important;
+  color: #7B2CBF !important;
+}
+
+/* Form Action Buttons */
+.premium-form-card button[type="submit"],
+.premium-form-card .btn-primary {
+  width: 100% !important;
+  background: var(--gradient-primary) !important;
+  border: none !important;
+  color: #ffffff !important;
+  border-radius: 9999px !important;
+  padding: 0.85rem 2rem !important;
+  font-weight: 700 !important;
+  text-transform: uppercase !important;
+  letter-spacing: 0.05em !important;
+  transition: all 0.3s ease !important;
+  box-shadow: 0 4px 15px rgba(217, 4, 41, 0.15) !important;
+  margin-top: 1.5rem !important;
+}
+
+.premium-form-card button[type="submit"]:hover,
+.premium-form-card .btn-primary:hover {
+  background: var(--gradient-primary-hover) !important;
+  transform: translateY(-2px) !important;
+  box-shadow: 0 8px 25px rgba(217, 4, 41, 0.35) !important;
+  color: #ffffff !important;
+}
+
 .form-control {
   border-radius: var(--radius);
   border: 1px solid var(--color-border);
