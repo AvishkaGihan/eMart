@@ -7,8 +7,8 @@
   --color-accent-hover: #333333;
   --color-border: #E5E7EB;
   --color-star: #F59E0B;
-  --gradient-primary: linear-gradient(135deg, #7B2CBF 0%, #FF006E 50%, #FFBE0B 100%);
-  --gradient-primary-hover: linear-gradient(135deg, #622299 0%, #CC0058 50%, #E5AA0A 100%);
+  --gradient-primary: linear-gradient(135deg, #7B2CBF 0%, #D90429 100%);
+  --gradient-primary-hover: linear-gradient(135deg, #622299 0%, #BA0020 100%);
   --radius: 12px;
   --radius-lg: 16px;
   --transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
@@ -55,6 +55,7 @@ a:hover {
   background-color: rgba(255, 255, 255, 0.9) !important;
   backdrop-filter: blur(8px);
   border-bottom: 1px solid var(--color-border);
+  box-shadow: 0 4px 20px rgba(0,0,0,0.05);
 }
 
 .navbar-brand {
@@ -64,19 +65,22 @@ a:hover {
 
 /* Buttons */
 .btn-primary {
-  background: var(--gradient-primary);
-  border: none;
-  color: #fff;
+  background: linear-gradient(#fff, #fff) padding-box,
+              var(--gradient-primary) border-box;
+  border: 2px solid transparent;
+  color: #111827;
   border-radius: 9999px; /* Pill shape */
   padding: 0.5rem 1.5rem;
   font-weight: 600;
-  transition: var(--transition);
+  transition: all 0.3s ease;
 }
 
 .btn-primary:hover, .btn-primary:focus, .btn-primary:active {
-  background: var(--gradient-primary-hover) !important;
-  border: none !important;
-  color: #fff !important;
+  background: linear-gradient(#fff, #fff) padding-box,
+              var(--gradient-primary-hover) border-box !important;
+  border: 2px solid transparent !important;
+  color: #111827 !important;
+  box-shadow: 0 0 15px rgba(123, 44, 191, 0.3);
   transform: translateY(-1px);
 }
 
@@ -219,16 +223,20 @@ a:hover {
   text-transform: uppercase;
   letter-spacing: 0.05em;
   border-radius: 9999px;
-  background: var(--gradient-primary);
-  color: #fff;
-  border: none;
+  background: linear-gradient(#fff, #fff) padding-box,
+              var(--gradient-primary) border-box;
+  border: 2px solid transparent;
+  color: #111827;
   width: 100%;
-  transition: var(--transition);
+  transition: all 0.3s ease;
 }
 
 .premium-add-to-cart:hover {
-  background: var(--gradient-primary-hover);
-  color: #fff;
+  background: linear-gradient(#fff, #fff) padding-box,
+              var(--gradient-primary-hover) border-box;
+  color: #111827;
+  box-shadow: 0 0 15px rgba(123, 44, 191, 0.3);
+  transform: translateY(-1px);
 }
 
 .premium-qty-select {
@@ -489,7 +497,7 @@ table td, table th {
 
 .search-input {
   border-radius: 9999px;
-  border: 1px solid var(--color-border);
+  border: 2px solid var(--color-border);
   padding: 0.5rem 2.5rem 0.5rem 1.25rem;
   transition: all 0.3s ease;
   width: 250px;
@@ -499,9 +507,10 @@ table td, table th {
 
 .search-input:focus {
   width: 300px;
-  background-color: var(--color-surface);
-  border-color: var(--color-text-muted);
-  box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+  background: linear-gradient(var(--color-surface), var(--color-surface)) padding-box,
+              var(--gradient-primary) border-box;
+  border: 2px solid transparent;
+  box-shadow: 0 0 15px rgba(123, 44, 191, 0.15);
   outline: none;
 }
 
@@ -522,7 +531,10 @@ table td, table th {
 }
 
 .search-btn:hover {
-  color: var(--color-accent);
+  background: var(--gradient-primary);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
 }
 
 /* Auth Split Screen (Premium) */
@@ -536,12 +548,23 @@ table td, table th {
 }
 
 .auth-branding-side {
-  background: var(--gradient-primary);
-  color: #fff;
+  background: #fff;
+  color: var(--color-text);
   padding: 4rem;
   display: flex;
   flex-direction: column;
   justify-content: center;
+  position: relative;
+}
+
+.auth-branding-side::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 6px;
+  background: var(--gradient-primary);
 }
 
 .auth-branding-title {
@@ -550,12 +573,15 @@ table td, table th {
   letter-spacing: -0.04em;
   line-height: 1.1;
   margin-bottom: 1.5rem;
-  color: #ffffff !important;
+  background: var(--gradient-primary);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
 }
 
 .auth-branding-subtitle {
   font-size: 1.25rem;
-  color: rgba(255, 255, 255, 0.8) !important;
+  color: var(--color-text-muted) !important;
   line-height: 1.6;
 }
 
@@ -607,16 +633,19 @@ table td, table th {
   text-transform: uppercase;
   letter-spacing: 0.05em;
   border-radius: 9999px;
-  background: var(--gradient-primary);
-  color: #fff;
-  border: none;
+  background: linear-gradient(#fff, #fff) padding-box,
+              var(--gradient-primary) border-box;
+  border: 2px solid transparent;
+  color: #111827;
   margin-top: 1.5rem;
-  transition: transform 0.2s;
+  transition: all 0.3s ease;
 }
 
 .auth-btn:hover {
-  background: var(--gradient-primary-hover);
-  color: #fff;
+  background: linear-gradient(#fff, #fff) padding-box,
+              var(--gradient-primary-hover) border-box;
+  color: #111827;
+  box-shadow: 0 0 15px rgba(123, 44, 191, 0.3);
   transform: translateY(-1px);
 }
 
