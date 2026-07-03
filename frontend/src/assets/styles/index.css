@@ -217,19 +217,8 @@ a:hover {
   display: flex;
   align-items: center;
   justify-content: center;
-  background: #f8f9fa;
+  background: transparent;
   position: relative;
-}
-
-.editorial-image-container::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  bottom: 0;
-  left: -50px;
-  width: 100px;
-  background: linear-gradient(to right, var(--color-surface) 0%, transparent 100%);
-  z-index: 1;
 }
 
 .editorial-image {
