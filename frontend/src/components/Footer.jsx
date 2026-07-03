@@ -8,7 +8,10 @@ const Footer = () => {
       <Container>
         <Row className="gy-4">
           <Col md={4}>
-            <h4 style={{ color: '#ffffff', fontWeight: 'bold' }}>eMart</h4>
+            <h4 className="display-6 text-gradient mb-3" style={{ fontWeight: 'bold', filter: 'drop-shadow(0 0 10px rgba(217, 4, 41, 0.4))' }}>
+              <span style={{ fontStyle: 'italic', fontWeight: 900, marginRight: '2px' }}>e</span>
+              <span className="fw-bold">Mart</span>
+            </h4>
             <p>Your one-stop destination for premium products. We offer the best quality at the most competitive prices.</p>
           </Col>
           <Col md={2}>

@@ -6,7 +6,6 @@ import { useSelector, useDispatch } from "react-redux";
 import { useLogoutMutation } from "../slices/userApiSlice";
 import { logout } from "../slices/authSlice";
 import SearchBox from "./SearchBox";
-import logo from "../assets/logo.png";
 import { resetCart } from "../slices/cartSlice";
 
 const Header = () => {
@@ -34,18 +33,20 @@ const Header = () => {
       <Navbar variant="light" expand="md" collapseOnSelect className="border-bottom shadow-none" sticky="top" style={{ backgroundColor: 'rgba(255, 255, 255, 0.9)' }}>
         <Container>
           <LinkContainer to="/">
-            <Navbar.Brand>
-              <img src={logo} alt="eMart" className="mx-2" />
-              Mart
+            <Navbar.Brand className="fs-3 text-gradient">
+              <span style={{ fontStyle: 'italic', fontWeight: 900, marginRight: '1px' }}>e</span>
+              <span className="fw-bold">Mart</span>
             </Navbar.Brand>
           </LinkContainer>
           <Navbar.Toggle aria-controls="basic-navbar-nav" />
           <Navbar.Collapse id="basic-navbar-nav">
-            <Nav className="ms-auto">
+            <Nav className="mx-auto" style={{ flex: 1, maxWidth: '600px', justifyContent: 'center' }}>
               <SearchBox />
+            </Nav>
+            <Nav className="ms-auto align-items-center">
               <LinkContainer to="/cart">
-                <Nav.Link>
-                  <FaShoppingCart /> Cart
+                <Nav.Link className="d-flex align-items-center me-3">
+                  <FaShoppingCart className="me-2" /> Cart
                   {cartItems.length > 0 && (
                     <Badge
                       pill
@@ -71,8 +72,8 @@ const Header = () => {
                 </NavDropdown>
               ) : (
                 <LinkContainer to="/login">
-                  <Nav.Link href="/login">
-                    <FaUser /> Sign In
+                  <Nav.Link className="nav-sign-in-btn d-flex align-items-center text-nowrap">
+                    <FaUser className="me-2" /> Sign In
                   </Nav.Link>
                 </LinkContainer>
               )}
