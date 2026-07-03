@@ -54,54 +54,56 @@ const ProfileScreen = () => {
   };
 
   return (
-    <Row>
-      <Col md={3}>
-        <h2>User Profile</h2>
-        <Form onSubmit={submitHandler}>
-          <Form.Group controlId="name" className="my-2">
-            <Form.Label>Name</Form.Label>
-            <Form.Control
-              type="name"
-              placeholder="Enter name"
-              value={name}
-              onChange={(e) => setName(e.target.value)}
-            />
-          </Form.Group>
-          <Form.Group controlId="email" className="my-2">
-            <Form.Label>Email Address</Form.Label>
-            <Form.Control
-              type="email"
-              placeholder="Enter email"
-              value={email}
-              onChange={(e) => setEmail(e.target.value)}
-            />
-          </Form.Group>
-          <Form.Group controlId="password" className="my-2">
-            <Form.Label>Password</Form.Label>
-            <Form.Control
-              type="password"
-              placeholder="Enter password"
-              value={password}
-              onChange={(e) => setPassword(e.target.value)}
-            />
-          </Form.Group>
-          <Form.Group controlId="confirmPassword" className="my-2">
-            <Form.Label>Confirm Password</Form.Label>
-            <Form.Control
-              type="password"
-              placeholder="Confirm password"
-              value={confirmPassword}
-              onChange={(e) => setConfirmPassword(e.target.value)}
-            />
-          </Form.Group>
-          <Button type="submit" variant="primary">
-            Update
-          </Button>
-          {loadingUpdateProfile && <Loader />}
-        </Form>
+    <Row className="gy-4">
+      <Col md={4}>
+        <div className="premium-form-card mt-0">
+          <h2 className="mb-4" style={{ fontWeight: 800, letterSpacing: "-0.02em" }}>User Profile</h2>
+          <Form onSubmit={submitHandler}>
+            <Form.Group controlId="name">
+              <Form.Label>Name</Form.Label>
+              <Form.Control
+                type="name"
+                placeholder="Enter name"
+                value={name}
+                onChange={(e) => setName(e.target.value)}
+              />
+            </Form.Group>
+            <Form.Group controlId="email">
+              <Form.Label>Email Address</Form.Label>
+              <Form.Control
+                type="email"
+                placeholder="Enter email"
+                value={email}
+                onChange={(e) => setEmail(e.target.value)}
+              />
+            </Form.Group>
+            <Form.Group controlId="password">
+              <Form.Label>Password</Form.Label>
+              <Form.Control
+                type="password"
+                placeholder="Enter password"
+                value={password}
+                onChange={(e) => setPassword(e.target.value)}
+              />
+            </Form.Group>
+            <Form.Group controlId="confirmPassword">
+              <Form.Label>Confirm Password</Form.Label>
+              <Form.Control
+                type="password"
+                placeholder="Confirm password"
+                value={confirmPassword}
+                onChange={(e) => setConfirmPassword(e.target.value)}
+              />
+            </Form.Group>
+            <Button type="submit" variant="primary">
+              Update
+            </Button>
+            {loadingUpdateProfile && <Loader />}
+          </Form>
+        </div>
       </Col>
-      <Col md={9}>
-        <h2>My Orders</h2>
+      <Col md={8}>
+        <h2 className="mb-4" style={{ fontWeight: 800, letterSpacing: "-0.02em" }}>My Orders</h2>
         {isLoading ? (
           <Loader />
         ) : error ? (
@@ -127,7 +129,11 @@ const ProfileScreen = () => {
                   <td>{order.createdAt.substring(0, 10)}</td>
                   <td>${order.totalPrice}</td>
                   <td>
-                    {order.isPaid ? order.paidAt.substring(0, 10) : <FaTimes />}
+                    {order.isPaid ? (
+                      order.paidAt.substring(0, 10)
+                    ) : (
+                      <FaTimes style={{ color: "red" }} />
+                    )}
                   </td>
                   <td>
                     {order.isDelivered ? (
