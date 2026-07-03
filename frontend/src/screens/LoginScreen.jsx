@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import { Link, useLocation, useNavigate } from "react-router-dom";
-import { Form, Button, Row, Col } from "react-bootstrap";
+import { Form, Row, Col } from "react-bootstrap";
 import { useDispatch, useSelector } from "react-redux";
 import Loader from "../components/Loader";
 import { useLoginMutation } from "../slices/userApiSlice";
@@ -40,15 +40,20 @@ const LoginScreen = () => {
   };
 
   return (
-    <div className="auth-container">
-      <div className="auth-card">
-        <h1 className="auth-header">Welcome Back.</h1>
-
+    <Row className="auth-split-container my-5">
+      <Col md={6} className="auth-branding-side d-none d-md-flex">
+        <h1 className="auth-branding-title">Welcome Back to eMart.</h1>
+        <p className="auth-branding-subtitle">
+          Sign in to access your premium account, track orders, and discover new arrivals.
+        </p>
+      </Col>
+      <Col md={6} className="auth-form-side">
+        <h2 className="auth-header">Sign In</h2>
         <Form onSubmit={submitHandler}>
           <Form.Group className="mb-4" controlId="email">
             <Form.Label className="auth-label">Email Address</Form.Label>
             <Form.Control
-              className="auth-input"
+              className="premium-auth-input"
               type="email"
               placeholder="Enter email"
               value={email}
@@ -59,7 +64,7 @@ const LoginScreen = () => {
           <Form.Group className="mb-4" controlId="password">
             <Form.Label className="auth-label">Password</Form.Label>
             <Form.Control
-              className="auth-input"
+              className="premium-auth-input"
               type="password"
               placeholder="Enter password"
               value={password}
@@ -67,23 +72,21 @@ const LoginScreen = () => {
             ></Form.Control>
           </Form.Group>
 
-          <Button disabled={isLoading} type="submit" variant="primary" className="auth-btn">
+          <button disabled={isLoading} type="submit" className="auth-btn">
             Sign In
-          </Button>
+          </button>
 
           {isLoading && <Loader />}
         </Form>
 
-        <Row className="py-4 text-center mt-3">
-          <Col>
-            New Customer?{" "}
-            <Link to={redirect ? `/register?redirect=${redirect}` : "/register"} className="fw-bold">
-              Create an account
-            </Link>
-          </Col>
-        </Row>
-      </div>
-    </div>
+        <div className="mt-5 text-center">
+          <span className="text-muted">New Customer? </span>
+          <Link to={redirect ? `/register?redirect=${redirect}` : "/register"} className="fw-bold text-dark text-decoration-none">
+            Create an account
+          </Link>
+        </div>
+      </Col>
+    </Row>
   );
 };
 

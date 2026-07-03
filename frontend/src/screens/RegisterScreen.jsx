@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import { Link, useLocation, useNavigate } from "react-router-dom";
-import { Form, Button, Row, Col } from "react-bootstrap";
+import { Form, Row, Col } from "react-bootstrap";
 import { useDispatch, useSelector } from "react-redux";
 import Loader from "../components/Loader";
 import { useRegisterMutation } from "../slices/userApiSlice";
@@ -47,15 +47,20 @@ const RegisterScreen = () => {
   };
 
   return (
-    <div className="auth-container">
-      <div className="auth-card">
-        <h1 className="auth-header">Create Account.</h1>
-
+    <Row className="auth-split-container my-5">
+      <Col md={6} className="auth-branding-side d-none d-md-flex">
+        <h1 className="auth-branding-title">Join eMart Today.</h1>
+        <p className="auth-branding-subtitle">
+          Create an account to track your orders, save your favorite products, and access exclusive premium deals.
+        </p>
+      </Col>
+      <Col md={6} className="auth-form-side">
+        <h2 className="auth-header">Create Account</h2>
         <Form onSubmit={submitHandler}>
           <Form.Group className="mb-4" controlId="name">
             <Form.Label className="auth-label">Name</Form.Label>
             <Form.Control
-              className="auth-input"
+              className="premium-auth-input"
               type="text"
               placeholder="Enter name"
               value={name}
@@ -66,7 +71,7 @@ const RegisterScreen = () => {
           <Form.Group className="mb-4" controlId="email">
             <Form.Label className="auth-label">Email Address</Form.Label>
             <Form.Control
-              className="auth-input"
+              className="premium-auth-input"
               type="email"
               placeholder="Enter email"
               value={email}
@@ -77,7 +82,7 @@ const RegisterScreen = () => {
           <Form.Group className="mb-4" controlId="password">
             <Form.Label className="auth-label">Password</Form.Label>
             <Form.Control
-              className="auth-input"
+              className="premium-auth-input"
               type="password"
               placeholder="Enter password"
               value={password}
@@ -88,7 +93,7 @@ const RegisterScreen = () => {
           <Form.Group className="mb-4" controlId="confirmPassword">
             <Form.Label className="auth-label">Confirm Password</Form.Label>
             <Form.Control
-              className="auth-input"
+              className="premium-auth-input"
               type="password"
               placeholder="Confirm password"
               value={confirmPassword}
@@ -96,23 +101,21 @@ const RegisterScreen = () => {
             ></Form.Control>
           </Form.Group>
 
-          <Button disabled={isLoading} type="submit" variant="primary" className="auth-btn">
+          <button disabled={isLoading} type="submit" className="auth-btn">
             Register
-          </Button>
+          </button>
 
           {isLoading && <Loader />}
         </Form>
 
-        <Row className="py-4 text-center mt-3">
-          <Col>
-            Already have an account?{" "}
-            <Link to={redirect ? `/login?redirect=${redirect}` : "/login"} className="fw-bold">
-              Sign In
-            </Link>
-          </Col>
-        </Row>
-      </div>
-    </div>
+        <div className="mt-5 text-center">
+          <span className="text-muted">Already have an account? </span>
+          <Link to={redirect ? `/login?redirect=${redirect}` : "/login"} className="fw-bold text-dark text-decoration-none">
+            Sign In
+          </Link>
+        </div>
+      </Col>
+    </Row>
   );
 };
 
