@@ -48,7 +48,7 @@ const RegisterScreen = () => {
 
   return (
     <Row className="auth-split-container my-5">
-      <Col md={6} className="auth-branding-side d-none d-md-flex">
+      <Col md={6} className="auth-branding-side register-bg d-none d-md-flex">
         <h1 className="auth-branding-title">Join eMart Today.</h1>
         <p className="auth-branding-subtitle">
           Create an account to track your orders, save your favorite products, and access exclusive premium deals.

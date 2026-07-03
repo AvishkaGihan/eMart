@@ -41,7 +41,7 @@ const LoginScreen = () => {
 
   return (
     <Row className="auth-split-container my-5">
-      <Col md={6} className="auth-branding-side d-none d-md-flex">
+      <Col md={6} className="auth-branding-side login-bg d-none d-md-flex">
         <h1 className="auth-branding-title">Welcome Back to eMart.</h1>
         <p className="auth-branding-subtitle">
           Sign in to access your premium account, track orders, and discover new arrivals.
