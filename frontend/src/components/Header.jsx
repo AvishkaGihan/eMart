@@ -31,7 +31,7 @@ const Header = () => {
 
   return (
     <header>
-      <Navbar bg="white" variant="light" expand="md" collapseOnSelect className="border-bottom shadow-none" sticky="top">
+      <Navbar variant="light" expand="md" collapseOnSelect className="border-bottom shadow-none" sticky="top" style={{ backgroundColor: 'rgba(255, 255, 255, 0.9)' }}>
         <Container>
           <LinkContainer to="/">
             <Navbar.Brand>
@@ -51,7 +51,7 @@ const Header = () => {
                       pill
                       style={{
                         marginLeft: "5px",
-                        backgroundColor: "var(--color-accent)",
+                        background: "var(--gradient-primary)",
                         color: "#fff"
                       }}
                     >

@@ -1,12 +1,14 @@
 :root {
   --color-bg: #FAFAFA;
   --color-surface: #FFFFFF;
-  --color-text: #1A1A1A;
+  --color-text: #111827;
   --color-text-muted: #6B7280;
   --color-accent: #111111;
   --color-accent-hover: #333333;
   --color-border: #E5E7EB;
   --color-star: #F59E0B;
+  --gradient-primary: linear-gradient(135deg, #7B2CBF 0%, #FF006E 50%, #FFBE0B 100%);
+  --gradient-primary-hover: linear-gradient(135deg, #622299 0%, #CC0058 50%, #E5AA0A 100%);
   --radius: 12px;
   --radius-lg: 16px;
   --transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
@@ -62,17 +64,19 @@ a:hover {
 
 /* Buttons */
 .btn-primary {
-  background-color: var(--color-accent);
-  border-color: var(--color-accent);
+  background: var(--gradient-primary);
+  border: none;
+  color: #fff;
   border-radius: 9999px; /* Pill shape */
   padding: 0.5rem 1.5rem;
-  font-weight: 500;
+  font-weight: 600;
   transition: var(--transition);
 }
 
 .btn-primary:hover, .btn-primary:focus, .btn-primary:active {
-  background-color: var(--color-accent-hover) !important;
-  border-color: var(--color-accent-hover) !important;
+  background: var(--gradient-primary-hover) !important;
+  border: none !important;
+  color: #fff !important;
   transform: translateY(-1px);
 }
 
@@ -188,7 +192,10 @@ a:hover {
   letter-spacing: -0.04em;
   line-height: 1.1;
   margin-bottom: 1rem;
-  color: var(--color-accent);
+  background: var(--gradient-primary);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
 }
 
 .product-editorial-price {
@@ -212,15 +219,15 @@ a:hover {
   text-transform: uppercase;
   letter-spacing: 0.05em;
   border-radius: 9999px;
-  background-color: var(--color-accent);
+  background: var(--gradient-primary);
   color: #fff;
   border: none;
   width: 100%;
-  transition: background-color 0.2s;
+  transition: var(--transition);
 }
 
 .premium-add-to-cart:hover {
-  background-color: var(--color-accent-hover);
+  background: var(--gradient-primary-hover);
   color: #fff;
 }
 
@@ -306,6 +313,10 @@ a:hover {
   letter-spacing: -0.04em;
   margin-bottom: 1rem;
   line-height: 1.1;
+  background: var(--gradient-primary);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
 }
 
 .editorial-content p {
@@ -525,7 +536,7 @@ table td, table th {
 }
 
 .auth-branding-side {
-  background: linear-gradient(135deg, #111 0%, #222 100%);
+  background: var(--gradient-primary);
   color: #fff;
   padding: 4rem;
   display: flex;
@@ -577,8 +588,8 @@ table td, table th {
 
 .premium-auth-input:focus {
   background-color: #fff !important;
-  border-color: var(--color-accent) !important;
-  box-shadow: 0 0 0 4px rgba(0,0,0,0.05) !important;
+  border-color: #7B2CBF !important;
+  box-shadow: 0 0 0 4px rgba(123, 44, 191, 0.15) !important;
 }
 
 .auth-label {
@@ -596,16 +607,17 @@ table td, table th {
   text-transform: uppercase;
   letter-spacing: 0.05em;
   border-radius: 9999px;
-  background-color: var(--color-accent);
+  background: var(--gradient-primary);
   color: #fff;
   border: none;
   margin-top: 1.5rem;
-  transition: background-color 0.2s;
+  transition: transform 0.2s;
 }
 
 .auth-btn:hover {
-  background-color: var(--color-accent-hover);
+  background: var(--gradient-primary-hover);
   color: #fff;
+  transform: translateY(-1px);
 }
 
 /* Misc Components */
