@@ -81,42 +81,60 @@ const ProductScreen = () => {
             
             <Col md={6}>
               <div className="product-editorial-details">
+                <span className="product-editorial-brand">{product.brand}</span>
                 <h1 className="product-editorial-title">{product.name}</h1>
-                <div className="mb-3">
+                <div className="mb-3 d-flex align-items-center">
                   <Rating value={product.rating} text={`${product.numReviews} reviews`} />
                 </div>
                 <div className="product-editorial-price">${product.price}</div>
                 <p className="product-editorial-desc">{product.description}</p>
                 
-                <div className="mb-4">
-                  <strong>Availability: </strong>
-                  {product.countInStock > 0 ? "In Stock" : "Out Of Stock"}
+                <div className="product-specs-grid mb-4">
+                  <div className="spec-item">
+                    <span className="spec-label">Brand</span>
+                    <span className="spec-value">{product.brand}</span>
+                  </div>
+                  <div className="spec-item">
+                    <span className="spec-label">Category</span>
+                    <span className="spec-value">{product.category}</span>
+                  </div>
+                  <div className="spec-item">
+                    <span className="spec-label">Status</span>
+                    <span className={`spec-value ${product.countInStock > 0 ? "in-stock" : "out-of-stock"}`}>
+                      {product.countInStock > 0 ? "In Stock" : "Out of Stock"}
+                    </span>
+                  </div>
                 </div>
 
-                {product.countInStock > 0 && (
-                  <div className="mb-4 d-flex align-items-center">
-                    <strong className="me-3">Quantity:</strong>
-                    <Form.Select
-                      className="premium-qty-select"
-                      value={qty}
-                      onChange={(e) => setQty(Number(e.target.value))}
+                {product.countInStock > 0 ? (
+                  <div className="buy-box-section mb-4">
+                    <div className="qty-wrapper me-3">
+                      <label className="qty-label">QTY</label>
+                      <Form.Select
+                        className="premium-qty-select"
+                        value={qty}
+                        onChange={(e) => setQty(Number(e.target.value))}
+                      >
+                        {[...Array(product.countInStock).keys()].map((x) => (
+                          <option key={x + 1} value={x + 1}>
+                            {x + 1}
+                          </option>
+                        ))}
+                      </Form.Select>
+                    </div>
+                    <button
+                      className="premium-add-to-cart flex-grow-1"
+                      disabled={product.countInStock === 0}
+                      onClick={addToCartHandler}
                     >
-                      {[...Array(product.countInStock).keys()].map((x) => (
-                        <option key={x + 1} value={x + 1}>
-                          {x + 1}
-                        </option>
-                      ))}
-                    </Form.Select>
+                      Add To Cart
+                    </button>
                   </div>
+                ) : (
+                  <button className="premium-add-to-cart disabled-btn w-100" disabled>
+                    Out of Stock
+                  </button>
                 )}
-
-                <button
-                  className="premium-add-to-cart"
-                  disabled={product.countInStock === 0}
-                  onClick={addToCartHandler}
-                >
-                  {product.countInStock > 0 ? "Add To Cart" : "Out of Stock"}
-                </button>
               </div>
             </Col>
           </Row>
